@@ -1,10 +1,7 @@
 const express=require("express");
 const router=express.Router();
-const path=require('path')
-const rootDir=require('../utils/path')
-router.get('/add-product',(req,res)=>{
-    res.sendFile(path.join(rootDir,'views','add-product.html'))
-})
+const addProduct=require('../controllers/product')
+router.get('/add-product',addProduct)
 
 router.post('/add-product',(req,res)=>{
     res.send('hi')
